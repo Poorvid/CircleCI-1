@@ -18,7 +18,7 @@ public class firstTest {
 	void setupClass()
 	{
 		
-		System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "lib/chromedriver");
 		driver = new ChromeDriver();
 	}
 
