@@ -19,11 +19,12 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
+      - run: chmod 777 /home/circleci/project/lib/chromedriver
       - run: mvn -version
       - run: java -version
       - run: mvn install
       - run: mvn test
-      - run: chmod 777 /home/circleci/project/lib/chromedriver
+      
          
       - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard.
           path: target/surefire-reports
