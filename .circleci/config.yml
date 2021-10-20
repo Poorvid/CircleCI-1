@@ -36,7 +36,7 @@ jobs:
             source $BASH_ENV
  
       - run: curl -H "Content-Type:text/xml" -H "Authorization:Bearer $token" --data @target/surefire-reports/testng-results.xml  https://xray.cloud.xpand-it.com/api/v1/import/execution/testng?projectKey=X1
-      - run: curl -H "Content-Type:text/xml" -X POST -H "Authorization:Bearer $token"  --data @"data.xml" https://xray.cloud.getxray.app/api/v1/import/execution/testng?testExecKey=XNP-23
+      #- run: curl -H "Content-Type:text/xml" -X POST -H "Authorization:Bearer $token"  --data @"data.xml" https://xray.cloud.getxray.app/api/v1/import/execution/testng?testExecKey=XNP-23
       
 
 # Invoke jobs via workflows
