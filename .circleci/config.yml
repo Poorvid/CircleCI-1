@@ -35,7 +35,8 @@ jobs:
             echo export token=$(curl -H "Content-Type: application/json" -X POST --data "{ \"client_id\": \"$client_id\",\"client_secret\": \"$client_secret\" }" https://xray.cloud.xpand-it.com/api/v1/authenticate| tr -d '"') >> $BASH_ENV
             source $BASH_ENV
  
-      - run: 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer $token" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=SP"'
+      - run: 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer $token" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=X1"'
+      
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
