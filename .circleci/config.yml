@@ -36,10 +36,10 @@ jobs:
             source $BASH_ENV
             export output=$(curl -H "Content-Type:text/xml" -X POST -H "Authorization:Bearer $token"  --data @"target/surefire-reports/TEST-PhantomJS_5.PhantomJS_5.FirstTest.xml" https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=J1&testExecKey=J1-4 | tr -d '"')
  
-     # - run: 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer $token" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=X1"'
-      #- run: 'curl -H "Content-Type: text/xml" -X POST -H "Authorization: Bearer $token"  --data @"data.xml" https://xray.cloud.getxray.app/api/v1/import/execution/junit?projectKey=X1'
+      - run: 'curl -H "Content-Type: text/xml" -H "Authorization: Bearer $token" --data @target/surefire-reports/TEST-com.xpand.java.CalcTest.xml  "https://xray.cloud.xpand-it.com/api/v1/import/execution/junit?projectKey=X1"'
+      - run: 'curl -H "Content-Type: text/xml" -X POST -H "Authorization: Bearer $token"  --data @"data.xml" https://xray.cloud.getxray.app/api/v1/import/execution/junit?projectKey=X1'
 
-      #- run: 'curl -H "Content-Type: text/xml" -X POST -H "Authorization: Bearer $token"  --data @"data.xml" https://xray.cloud.getxray.app/api/v1/import/execution/junit?testExecKey=X1-14'
+      - run: 'curl -H "Content-Type: text/xml" -X POST -H "Authorization: Bearer $token"  --data @"data.xml" https://xray.cloud.getxray.app/api/v1/import/execution/junit?testExecKey=X1-14'
       
 
 # Invoke jobs via workflows
